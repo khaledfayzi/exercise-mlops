@@ -3,3 +3,5 @@ ucimlrepo
 mlflow
 pandas
 numpy
+pytest
+joblib
