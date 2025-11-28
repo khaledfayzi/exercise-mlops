@@ -1,0 +1,52 @@
+name: CI Pipeline
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Repository herunterladen
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2) Python einrichten
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      # 3) Dependencies installieren
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -e .
+          pip install pytest flake8 black
+
+      # 4) Linting (flake8)
+      - name: Run flake8
+        run: flake8 .
+
+      # 5) Tests (pytest)
+      - name: Run pytest
+        run: pytest -v
+
+  docker-test:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      # 1) Repository herunterladen
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2) Docker build
+      - name: Build Docker image
+        run: docker build -t exercise-mlops .
+
+      # 3) Docker run
+      - name: Run container
+        run: docker run exercise-mlops
