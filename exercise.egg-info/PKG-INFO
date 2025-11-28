@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: exercise
+Version: 0.1.0
+Summary: ML pipeline exercise project
+Author-email: Khaled Fayzi <khaled.fayzi@smail.th-koeln.de>
+Requires-Python: >=3.10
+Requires-Dist: scikit-learn
+Requires-Dist: ucimlrepo
+Requires-Dist: joblib
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: black; extra == "dev"

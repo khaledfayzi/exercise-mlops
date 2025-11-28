@@ -1,0 +1,29 @@
+[project]
+name = "exercise"
+version = "0.1.0"
+description = "ML pipeline exercise project"
+authors = [
+    { name="Khaled Fayzi", email="khaled.fayzi@smail.th-koeln.de" }
+]
+
+requires-python = ">=3.10"
+
+dependencies = [
+    "scikit-learn",
+    "ucimlrepo",
+    "joblib",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "flake8",
+    "black",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["exercise_pkg"]

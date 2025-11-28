@@ -1,0 +1,12 @@
+pyproject.toml
+exercise.egg-info/PKG-INFO
+exercise.egg-info/SOURCES.txt
+exercise.egg-info/dependency_links.txt
+exercise.egg-info/requires.txt
+exercise.egg-info/top_level.txt
+exercise_pkg/__init__.py
+exercise_pkg/model_io.py
+exercise_pkg/pipeline.py
+tests/test_basic.py
+tests/test_model_io.py
+tests/test_pipeline.py
